@@ -20,12 +20,12 @@ export const anvil = defineChain({
 
 // Define Avalanche Chainlink chain
 export const avaxChainlinkChain = defineChain({
-  id: 60794123,
-  name: 'Avalanche Chainlink Chain',
+  id: 202102,
+  name: 'Thane testnet Chain ',
   nativeCurrency: {
     decimals: 18,
-    name: 'AVAX',
-    symbol: 'AVAX',
+    name: 'QTO',
+    symbol: 'QTO',
   },
   rpcUrls: {
     default: {
