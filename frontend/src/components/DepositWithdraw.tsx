@@ -5,7 +5,8 @@ import { useAccount, useWriteContract, useReadContract, useWaitForTransactionRec
 import { parseEther, formatEther } from 'viem';
 import { YieldVaultABI, MockDAIABI } from '@/config/abis';
 import { contractAddresses, anvil } from '@/config/wagmi';
-import { ArrowDown, ArrowUp, Coins, Loader2, Banknote } from 'lucide-react';
+// @typescript-eslint/no-unused-vars
+import { ArrowDown, ArrowUp, Loader2, Banknote } from 'lucide-react';
 
 export default function DepositWithdraw() {
   const [activeTab, setActiveTab] = useState<'deposit' | 'withdraw'>('deposit');

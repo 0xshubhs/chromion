@@ -2,7 +2,7 @@
 
 import { useAccount, useReadContract } from 'wagmi';
 import { formatEther } from 'viem';
-import { YieldVaultABI, MockDAIABI } from '@/config/abis';
+import { YieldVaultABI } from '@/config/abis';
 import { contractAddresses, anvil } from '@/config/wagmi';
 import { DollarSign, TrendingUp, Activity, Users } from 'lucide-react';
 
@@ -11,7 +11,7 @@ export default function VaultStats() {
   
   const currentChainId = chain?.id || anvil.id;
   const vaultAddress = contractAddresses[currentChainId as keyof typeof contractAddresses]?.yieldVault;
-  const daiAddress = contractAddresses[currentChainId as keyof typeof contractAddresses]?.mockDAI;
+  // const daiAddress = contractAddresses[currentChainId as keyof typeof contractAddresses]?.mockDAI;
 
   // Read user balance
   const { data: userBalance } = useReadContract({
@@ -43,11 +43,11 @@ export default function VaultStats() {
   });
 
   // Read total DAI supply (for context)
-  const { data: totalDAISupply } = useReadContract({
-    address: daiAddress,
-    abi: MockDAIABI,
-    functionName: 'totalSupply',
-  });
+  // const { data: totalDAISupply } = useReadContract({
+  //   address: daiAddress,
+  //   abi: MockDAIABI,
+  //   functionName: 'totalSupply',
+  // });
 
   const formatAPY = (apy: bigint | undefined) => {
     if (!apy) return '0.00';
