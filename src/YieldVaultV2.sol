@@ -104,6 +104,7 @@ contract YieldVaultV2 is ReentrancyGuard, Ownable, AutomationCompatibleInterface
         userDeposits[msg.sender].shares += sharesToMint;
         userDeposits[msg.sender].depositTime = block.timestamp;
         
+        
         // Update vault totals
         totalShares += sharesToMint;
         totalPrincipal += amount;
@@ -370,7 +371,7 @@ contract YieldVaultV2 is ReentrancyGuard, Ownable, AutomationCompatibleInterface
         require(newThreshold <= 1000, "Threshold too high"); // Max 10%
         rebalanceThreshold = newThreshold;
         emit RebalanceThresholdUpdated(newThreshold);
-    }
+    }   
 
     /**
      * @dev Update compound interval (owner only)
